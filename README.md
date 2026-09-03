@@ -134,10 +134,14 @@ These do not guarantee causal understanding, intention inference, Navy-domain tr
 ## Synthetic smoke-test summary
 
 <img width="1800" height="1030" alt="primary_paired_effect" src="https://github.com/user-attachments/assets/e662b589-3cb4-4dc3-8f7b-3c94abb60516" />
-Figure 1. Primary paired effect. WSP trailed the validation-selected GRU by -0.2301 macro-AP points. Four of five paired seed effects were negative; the only positive effect (+0.0192) remained below the +0.02 success margin. The displayed sequence-bootstrap interval, **[-0.2301, -0.1042]**, is diagnostic only because it is based on two synthetic sequences, not the minimum 20. It must not be described as statistical significance.
+Figure 1. Primary paired effect. WSP trailed the validation-selected GRU by -0.2301 macro-AP points. Four of five paired seed effects were negative; the only positive effect (+0.0192) remained below the +0.02 success margin. The displayed sequence-bootstrap interval, [-0.2301, -0.1042], is diagnostic only because it is based on two synthetic sequences, not the minimum 20. It must not be described as statistical significance.
 
 <img width="2200" height="1130" alt="condition_performance_calibration" src="https://github.com/user-attachments/assets/2bae1cdd-5d78-4d79-86a1-b26ee68a2aa1" />
 Figure 2. Secondary condition results. WSP was strongest under burst missingness and exceeded the Transformer in several schedules, but the validation-selected GRU was stronger in most regimes and decisively stronger on the primary long-gap endpoint. Lower is better for Brier and ECE. The points are five-seed means evaluated on the same two sequences, not five independent datasets.
 
 <img width="2250" height="1220" alt="timing_intervention_effects" src="https://github.com/user-attachments/assets/7c4aa1d4-c717-492c-a4a7-172be5c978f3" />
 Figure 3. Secondary timing controls. Zeroing elapsed time affected WSP more strongly than the baselines and reduced its macro AP in every schedule (mean change -0.1193). Constant and shuffled inputs produced mixed effects. Therefore, this control confirms that the implemented WSP uses a timing signal, but it does not establish that WSP exploits exact elapsed-time structure better than the baselines.
+
+## Relevance to the Proposed DoN Research and Technical Readiness
+
+The synthetic smoke test supports the DoN proposal primarily by demonstrating technical and experimental readiness. It confirms that the proposed pipeline—irregular-observation generation, persistent WSP modeling, capacity-matched baselines, timing interventions, multi-seed evaluation, and paired sequence-level analysis—can operate end to end. WSP’s performance under burst removal and its sensitivity to elapsed-time information provide testable motivation for the proposed investigation. Because this test used only two synthetic sequences and did not satisfy the primary performance criterion, it should be presented as evidence of feasibility and protocol readiness, not as evidence that WSP already outperforms competing models.
